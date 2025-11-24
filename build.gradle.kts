@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.bravos.tools"
+group = "com.bravos.steak.utils"
 version = "1.0.0"
 
 publishing {
