@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.bravos.steak"
-version = "1.0.1"
+version = "1.0.2"
 
 publishing {
     publications {
@@ -30,6 +30,8 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
+    implementation("org.reflections:reflections:0.10.2")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
