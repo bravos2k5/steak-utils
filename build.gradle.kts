@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.bravos.steak"
-version = "1.0.2"
+version = "1.0.3"
 
 publishing {
     publications {
@@ -30,8 +30,9 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor("no.entur.mapstruct.spi:protobuf-spi-impl:1.52.0")
+    implementation("org.mapstruct:mapstruct:1.6.3")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
-    implementation("org.reflections:reflections:0.10.2")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
