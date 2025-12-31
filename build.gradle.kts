@@ -5,39 +5,12 @@ plugins {
 }
 
 group = "com.bravos.steak"
-version = "1.0.3"
-
-publishing {
-    publications {
-        register<MavenPublication>("gpr") {
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/bravos2k5/steak-utils")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-            }
-        }
-    }
-}
+version = "1.0.5"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    annotationProcessor("no.entur.mapstruct.spi:protobuf-spi-impl:1.52.0")
-    implementation("org.mapstruct:mapstruct:1.6.3")
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
 
-tasks.test {
-    useJUnitPlatform()
 }
